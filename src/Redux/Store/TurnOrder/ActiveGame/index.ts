@@ -1,4 +1,5 @@
 import { createAction, ActionsUnion } from '@martin_hotell/rex-tils'
+import { createSelector } from 'reselect'
 import { LoopReducer, loop, Cmd } from 'redux-loop'
 import { get as getFromDb, set as setToDb } from 'idb-keyval'
 
@@ -218,8 +219,14 @@ const getDeck = (state: RootState) => state.TurnOrder.ActiveGame.deck
 const getDiscard = (state: RootState) => state.TurnOrder.ActiveGame.discard
 const getHasStarted = (state: RootState) => state.TurnOrder.ActiveGame.started
 
+const getLastDrawnCard = createSelector(
+  [getDiscard],
+  discard => discard[0]
+)
+
 export const selectors = {
   getDeck,
   getDiscard,
   getHasStarted,
+  getLastDrawnCard,
 }

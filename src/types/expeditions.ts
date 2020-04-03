@@ -193,16 +193,24 @@ export type Battle = {
   tries: number
 }
 
-// TODO
-export type Narrative = {}
+export type Narrative = {
+  id: string
+  type: 'narrative'
+  text: string
+  descisions: string[]
+}
 
-// TODO
-export type RewardBranch = {}
+export type RewardBranch = {
+  id: string
+  rewards: Rewards
+}
 
-export type Branch = Battle | Narrative | RewardBranch
+export type BranchConfig = {
+  isFirst?: boolean
+  nextBranchId: string | { [key: number]: string }
+}
 
-// TODO
-export type RoutingConfig = {}
+export type Branch = BranchConfig & (Battle | Narrative | RewardBranch)
 
 export type Expedition = {
   id: string
@@ -217,10 +225,7 @@ export type Expedition = {
   }
   upgradedBasicNemesisCards: string[]
   banished: string[]
-  progression: {
-    branches: { [id: string]: Branch }
-    routing: RoutingConfig[]
-  }
+  branches: { [id: string]: Branch }
   variantId: string
   bigPocketVariant: boolean
   finished: boolean

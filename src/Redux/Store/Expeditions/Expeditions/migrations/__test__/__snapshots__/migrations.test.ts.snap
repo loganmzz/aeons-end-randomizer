@@ -117,6 +117,7 @@ Object {
       "bigPocketVariant": false,
       "finished": false,
       "id": "Ce850x17_",
+      "migrationVersion": 2020030301,
       "name": "test",
       "score": 4,
       "seed": Object {
@@ -1111,6 +1112,7 @@ Object {
       "bigPocketVariant": false,
       "finished": false,
       "id": "HPEBVeG9",
+      "migrationVersion": 2020030301,
       "name": "Jakanytepopel",
       "score": 0,
       "seed": Object {
@@ -1835,6 +1837,7 @@ Object {
       "bigPocketVariant": false,
       "finished": false,
       "id": "V884fJ4MT",
+      "migrationVersion": 2020030301,
       "name": "",
       "score": 0,
       "seed": Object {
@@ -2560,6 +2563,7 @@ Object {
       "bigPocketVariant": false,
       "finished": false,
       "id": "WITHOUT_SNAPSHOT",
+      "migrationVersion": 2020030301,
       "name": "",
       "score": 0,
       "seed": Object {

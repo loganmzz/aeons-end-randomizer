@@ -10,7 +10,6 @@ const migrations: types.Migration[] = [
   {
     version: 2020030301,
     transformer: migrateToSettingsSnapshot,
-    force: true,
   },
 ]
 
@@ -29,14 +28,23 @@ export const migrate = (
   const migratedExpeditions = expeditions.map(expedition => {
     return migrations.reduce((acc, migration) => {
       if (!expedition.migrationVersion) {
-        return migration.transformer(rootState, acc)
+        return {
+          ...migration.transformer(rootState, acc),
+          migrationVersion: migration.version,
+        }
       } else if (migration.force) {
-        return migration.transformer(rootState, acc)
+        return {
+          ...migration.transformer(rootState, acc),
+          migrationVersion: migration.version,
+        }
       } else if (
         acc.migrationVersion &&
         migration.version > acc.migrationVersion
       ) {
-        return migration.transformer(rootState, acc)
+        return {
+          ...migration.transformer(rootState, acc),
+          migrationVersion: migration.version,
+        }
       }
 
       return acc

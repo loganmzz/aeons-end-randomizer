@@ -19,5 +19,5 @@ export type Migration = {
   // Number like: 2020030101 where the first 8 digits are the respective date and the last two the counter of this dates migration
   version: number
   transformer: Function
-  force?: boolean // foce even if version would skip
+  force?: boolean // force even if version would skip
 }

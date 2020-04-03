@@ -652,24 +652,6 @@ describe('Reducer()', () => {
     )
   })
 
-  it('should handle FETCH_FROM_DB_SUCCESS with state', () => {
-    const state = {
-      expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
-      },
-      expeditionIds: ['Expedition1'],
-    }
-
-    const result = Reducer(initialState, actions.fetchFromDBSuccessful(state))
-
-    const model = getModel(result)
-    const cmd = getCmd(result)
-
-    expect(model).toEqual(state)
-
-    expect(cmd).toEqual(null)
-  })
-
   it('should handle FETCH_FROM_DB_SUCCESS without state', () => {
     const result = Reducer(
       initialState,
@@ -698,9 +680,7 @@ describe('Reducer()', () => {
         args: [
           Cmd.getState,
           {
-            state,
-            // @ts-ignore disable-line
-            expeditionsToMigrate: [expedition2 as types.OldStyleExpedition],
+            newState: state,
           },
         ],
         successActionCreator: actions.migrateToSettingsSnapshotSuccessful,

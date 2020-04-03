@@ -10,13 +10,14 @@ import { EXPEDITIONS_DB_KEY } from './helpers'
 export const migrateAfterFetch = (
   action: ReturnType<typeof actions.fetchFromDBSuccessful>
 ) => {
+  const newState = action.payload
   return loop(
-    action.payload,
+    newState,
     Cmd.run(migrate, {
       args: [
         Cmd.getState,
         {
-          newState: action.payload,
+          newState,
         },
       ],
       successActionCreator: actions.migrateToSettingsSnapshotSuccessful,

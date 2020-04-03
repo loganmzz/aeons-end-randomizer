@@ -23,7 +23,7 @@ export const migrateAfterFetch = (
 
   return loop(
     action.payload,
-    Cmd.run(sideEffects.migrateToSettingsSnapshot, {
+    Cmd.run(sideEffects.migrate, {
       args: [
         Cmd.getState,
         {

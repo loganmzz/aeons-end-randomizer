@@ -693,7 +693,7 @@ describe('Reducer()', () => {
 
     expect(getModel(result)).toEqual(state)
     expect(getCmd(result)).toEqual(
-      Cmd.run(sideEffects.migrateToSettingsSnapshot, {
+      Cmd.run(sideEffects.migrate, {
         args: [
           Cmd.getState,
           {

@@ -10,6 +10,7 @@ import {
   expedition1,
   expedition2,
 } from 'Redux/Store/Expeditions/Expeditions/__test__/__fixtures__/expeditions'
+import { migrate } from 'Redux/Store/Expeditions/Expeditions/migrations'
 
 describe('Reducer()', () => {
   it('should return initial state', () => {
@@ -693,7 +694,7 @@ describe('Reducer()', () => {
 
     expect(getModel(result)).toEqual(state)
     expect(getCmd(result)).toEqual(
-      Cmd.run(sideEffects.migrate, {
+      Cmd.run(migrate, {
         args: [
           Cmd.getState,
           {

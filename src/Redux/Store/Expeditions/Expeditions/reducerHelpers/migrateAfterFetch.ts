@@ -1,7 +1,7 @@
 import { loop, Cmd } from 'redux-loop'
 import { set as setToDb } from 'idb-keyval'
 
-import * as sideEffects from '../sideEffects'
+import { migrate } from '../migrations'
 import { State } from '../types'
 import { actions } from '../actions'
 
@@ -23,7 +23,7 @@ export const migrateAfterFetch = (
 
   return loop(
     action.payload,
-    Cmd.run(sideEffects.migrate, {
+    Cmd.run(migrate, {
       args: [
         Cmd.getState,
         {

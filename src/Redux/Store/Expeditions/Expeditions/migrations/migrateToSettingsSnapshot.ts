@@ -2,8 +2,8 @@ import { RootState } from 'Redux/Store'
 
 import * as types from 'types'
 
-import { State } from '../../types'
-import { createSettingsSnapshot } from '../createSettingsSnapshot'
+import { State } from '../types'
+import { createSettingsSnapshot } from '../sideEffects/createSettingsSnapshot'
 
 // FIXME we should find a better way to do this kind of migration, which
 // is more organized and follows a recognizable pattern

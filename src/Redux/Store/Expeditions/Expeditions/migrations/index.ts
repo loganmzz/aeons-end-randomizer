@@ -2,7 +2,7 @@ import * as types from 'types'
 
 import { RootState } from 'Redux/Store'
 
-import { State } from '../../types'
+import { State } from '../types'
 
 import { migrateToSettingsSnapshot } from './migrateToSettingsSnapshot'
 

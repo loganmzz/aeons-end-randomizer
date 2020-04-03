@@ -1,5 +1,4 @@
 export * from './createExpeditionConfig'
-export * from './migrate'
 export { createBattle } from './createBattle'
 export * from './rollWinRewards'
 export * from './rollLossRewards'

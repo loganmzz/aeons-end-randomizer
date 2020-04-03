@@ -1,5 +1,5 @@
 import { NemesisTier, TreasureLevel } from './data'
-import { IMarketSetup } from 'types'
+import { IMarketSetup, IBluePrint } from 'types'
 import { Seed } from './index'
 
 export type VariantConfig = {
@@ -156,8 +156,52 @@ export type OldStyleExpedition = {
   finished: boolean
 }
 
-export type Branch = OldStyleBattle
+export type OnLoss = 'skip'
 
+export type Rewards = {
+  treasure: {
+    ids: Array<string | { random: true; level: 1 | 2 | 3 }>
+  }
+  mage: {
+    ids: Array<string | { random: true }>
+  }
+  supply: {
+    ids: Array<string | IBluePrint>
+    bigPocket: boolean
+  }
+}
+
+export type BattleConfig = {
+  tier: 1 | 2 | 3 | 4
+  nemesisId?: string
+  newUBNCards: { ids: []; addRandom: boolean }
+  specialRules?: string
+  lossRewards?: Rewards[]
+  winRewards?: Rewards
+  treasure: BattleTreasure
+  onLoss?: OnLoss
+}
+
+export type Battle = {
+  id: string
+  type: 'battle'
+  expeditionId: string
+  nemesisId?: string
+  battleConfig: BattleConfig
+  status: BattleStatus
+  rewards?: { treasure: string[]; mage?: string; supplyIds: string[] }
+  tries: number
+}
+
+// TODO
+export type Narrative = {}
+
+// TODO
+export type RewardBranch = {}
+
+export type Branch = Battle | Narrative | RewardBranch
+
+// TODO
 export type RoutingConfig = {}
 
 export type Expedition = {

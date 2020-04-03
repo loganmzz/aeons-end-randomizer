@@ -10,25 +10,13 @@ import { EXPEDITIONS_DB_KEY } from './helpers'
 export const migrateAfterFetch = (
   action: ReturnType<typeof actions.fetchFromDBSuccessful>
 ) => {
-  const expeditions = action.payload.expeditionIds.map(
-    id => action.payload.expeditions[id]
-  )
-  const expeditionsToMigrate = expeditions.filter(expedition => {
-    return !expedition.settingsSnapshot || !expedition.seed
-  })
-
-  if (expeditionsToMigrate.length === 0) {
-    return action.payload
-  }
-
   return loop(
     action.payload,
     Cmd.run(migrate, {
       args: [
         Cmd.getState,
         {
-          state: action.payload,
-          expeditionsToMigrate,
+          newState: action.payload,
         },
       ],
       successActionCreator: actions.migrateToSettingsSnapshotSuccessful,

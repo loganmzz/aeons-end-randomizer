@@ -2,7 +2,6 @@ import { RootState } from 'Redux/Store'
 
 import * as types from 'types'
 
-import { State } from '../types'
 import { createSettingsSnapshot } from '../sideEffects/createSettingsSnapshot'
 
 // FIXME we should find a better way to do this kind of migration, which
@@ -13,43 +12,18 @@ import { createSettingsSnapshot } from '../sideEffects/createSettingsSnapshot'
 // That way we can rely on the snapshot for all our calculations and no longer need to access
 // the useres current settings during an expedition.
 export const migrateToSettingsSnapshot = (
-  getState: () => RootState,
-  {
-    state,
-    expeditionsToMigrate,
-  }: {
-    state: State
-    expeditionsToMigrate: types.OldStyleExpedition[]
-  }
+  rootState: RootState,
+  expedition: types.OldStyleExpedition
 ) => {
-  const rootState = getState()
   const settingsSnapshot = createSettingsSnapshot(rootState)
 
-  const migratedExpeditions = expeditionsToMigrate.map(expedition => {
-    return {
-      ...expedition,
-      seed: expedition.seed || expedition.id,
-      settingsSnapshot: expedition.settingsSnapshot || settingsSnapshot,
-    }
-  })
-
-  const migratedExpeditionsObject = migratedExpeditions.reduce(
-    (acc, expedition) => {
-      return {
-        ...acc,
-        [expedition.id]: expedition,
-      }
-    },
-    {}
-  )
-
-  const migratedState = {
-    expeditions: {
-      ...state.expeditions,
-      ...migratedExpeditionsObject,
-    },
-    expeditionIds: state.expeditionIds,
+  if (expedition.settingsSnapshot && expedition.seed) {
+    return expedition
   }
 
-  return migratedState
+  return {
+    ...expedition,
+    seed: expedition.seed || expedition.id,
+    settingsSnapshot: expedition.settingsSnapshot || settingsSnapshot,
+  }
 }

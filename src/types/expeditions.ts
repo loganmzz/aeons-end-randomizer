@@ -140,6 +140,7 @@ export type ExpeditionSeed = Seed & {
 export type OldStyleExpedition = {
   id: string
   name: string
+  migrationVersion?: number
   score: number
   seed: ExpeditionSeed
   settingsSnapshot: SettingsSnapshot
@@ -215,6 +216,7 @@ export type Branch = BranchConfig & (Battle | Narrative | RewardBranch)
 export type Expedition = {
   id: string
   name: string
+  migrationVersion: number
   score: number
   seed: ExpeditionSeed
   settingsSnapshot: SettingsSnapshot

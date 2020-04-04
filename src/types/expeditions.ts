@@ -207,8 +207,7 @@ export type RewardBranch = {
 }
 
 export type BranchConfig = {
-  isFirst?: boolean
-  nextBranchId: string | { [key: number]: string }
+  nextBranchId?: string | { [key: number]: string }
 }
 
 export type Branch = BranchConfig & (Battle | Narrative | RewardBranch)
@@ -227,7 +226,10 @@ export type Expedition = {
   }
   upgradedBasicNemesisCards: string[]
   banished: string[]
-  branches: { [id: string]: Branch }
+  sequence: {
+    firstBattleId: string
+    branches: { [id: string]: Branch }
+  }
   variantId: string
   bigPocketVariant: boolean
   finished: boolean

@@ -42,78 +42,6 @@ Object {
           "IndirasLoneOpal",
         ],
       },
-      "battles": Array [
-        Object {
-          "expeditionId": "Ce850x17_",
-          "id": "CvghslX3mK",
-          "nemesisId": "KnightOfShackles",
-          "nemesisTier": Object {
-            "isNewTier": false,
-            "tier": 1,
-          },
-          "rewards": Object {
-            "supplyIds": Array [
-              "DiamondCluster",
-              "PainConduit",
-              "ThoughtformFamiliar",
-            ],
-            "treasure": Array [
-              "SparrowsAid",
-              "MistsAmethystParagon",
-              "BramasBuriedLight",
-              "XaxosPyre",
-              "IndirasLoneOpal",
-            ],
-          },
-          "status": "finished",
-          "treasure": Object {
-            "hasTreasure": true,
-            "level": 1,
-          },
-          "tries": 2,
-        },
-        Object {
-          "expeditionId": "Ce850x17_",
-          "id": "YBsJLx4PfV",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 2,
-          },
-          "status": "unlocked",
-          "treasure": Object {
-            "hasTreasure": true,
-            "level": 2,
-          },
-          "tries": 0,
-        },
-        Object {
-          "expeditionId": "Ce850x17_",
-          "id": "0t22iBGUff",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 3,
-          },
-          "status": "locked",
-          "treasure": Object {
-            "hasTreasure": true,
-            "level": 3,
-          },
-          "tries": 0,
-        },
-        Object {
-          "expeditionId": "Ce850x17_",
-          "id": "wXBtzLO1bM",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 4,
-          },
-          "status": "locked",
-          "treasure": Object {
-            "hasTreasure": false,
-          },
-          "tries": 0,
-        },
-      ],
       "bigPocketVariant": false,
       "finished": false,
       "id": "Ce850x17_",
@@ -647,6 +575,101 @@ Object {
           "j": 250,
         },
       },
+      "sequence": Object {
+        "branches": Object {
+          "0t22iBGUff": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 3,
+              "treasure": Object {
+                "hasTreasure": true,
+                "level": 3,
+              },
+            },
+            "expeditionId": "Ce850x17_",
+            "id": "0t22iBGUff",
+            "nextBranchId": "wXBtzLO1bM",
+            "status": "locked",
+            "tries": 0,
+            "type": "battle",
+          },
+          "CvghslX3mK": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": false,
+                "ids": Array [],
+              },
+              "tier": 1,
+              "treasure": Object {
+                "hasTreasure": true,
+                "level": 1,
+              },
+            },
+            "expeditionId": "Ce850x17_",
+            "id": "CvghslX3mK",
+            "nemesisId": "KnightOfShackles",
+            "nextBranchId": "YBsJLx4PfV",
+            "rewards": Object {
+              "supplyIds": Array [
+                "DiamondCluster",
+                "PainConduit",
+                "ThoughtformFamiliar",
+              ],
+              "treasure": Array [
+                "SparrowsAid",
+                "MistsAmethystParagon",
+                "BramasBuriedLight",
+                "XaxosPyre",
+                "IndirasLoneOpal",
+              ],
+            },
+            "status": "finished",
+            "tries": 2,
+            "type": "battle",
+          },
+          "YBsJLx4PfV": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 2,
+              "treasure": Object {
+                "hasTreasure": true,
+                "level": 2,
+              },
+            },
+            "expeditionId": "Ce850x17_",
+            "id": "YBsJLx4PfV",
+            "nextBranchId": "0t22iBGUff",
+            "status": "unlocked",
+            "tries": 0,
+            "type": "battle",
+          },
+          "wXBtzLO1bM": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 4,
+              "treasure": Object {
+                "hasTreasure": false,
+              },
+            },
+            "expeditionId": "Ce850x17_",
+            "id": "wXBtzLO1bM",
+            "nextBranchId": undefined,
+            "status": "locked",
+            "tries": 0,
+            "type": "battle",
+          },
+        },
+        "firstBattleId": "CvghslX3mK",
+      },
       "settingsSnapshot": Object {
         "availableCardIds": Array [
           "DiamondCluster",
@@ -1052,63 +1075,6 @@ Object {
         ],
         "treasureIds": Array [],
       },
-      "battles": Array [
-        Object {
-          "expeditionId": "HPEBVeG9",
-          "id": "sJUKZWynf",
-          "nemesisTier": Object {
-            "isNewTier": false,
-            "tier": 1,
-          },
-          "status": "unlocked",
-          "treasure": Object {
-            "hasTreasure": true,
-            "level": 1,
-          },
-          "tries": 0,
-        },
-        Object {
-          "expeditionId": "HPEBVeG9",
-          "id": "wgH5bJGS-",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 2,
-          },
-          "status": "locked",
-          "treasure": Object {
-            "hasTreasure": true,
-            "level": 2,
-          },
-          "tries": 0,
-        },
-        Object {
-          "expeditionId": "HPEBVeG9",
-          "id": "0WfVFTsXB",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 3,
-          },
-          "status": "locked",
-          "treasure": Object {
-            "hasTreasure": true,
-            "level": 3,
-          },
-          "tries": 0,
-        },
-        Object {
-          "expeditionId": "HPEBVeG9",
-          "id": "RLqy87hY8",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 4,
-          },
-          "status": "locked",
-          "treasure": Object {
-            "hasTreasure": false,
-          },
-          "tries": 0,
-        },
-      ],
       "bigPocketVariant": false,
       "finished": false,
       "id": "HPEBVeG9",
@@ -1379,6 +1345,86 @@ Object {
           "i": 73,
           "j": 79,
         },
+      },
+      "sequence": Object {
+        "branches": Object {
+          "0WfVFTsXB": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 3,
+              "treasure": Object {
+                "hasTreasure": true,
+                "level": 3,
+              },
+            },
+            "expeditionId": "HPEBVeG9",
+            "id": "0WfVFTsXB",
+            "nextBranchId": "RLqy87hY8",
+            "status": "locked",
+            "tries": 0,
+            "type": "battle",
+          },
+          "RLqy87hY8": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 4,
+              "treasure": Object {
+                "hasTreasure": false,
+              },
+            },
+            "expeditionId": "HPEBVeG9",
+            "id": "RLqy87hY8",
+            "nextBranchId": undefined,
+            "status": "locked",
+            "tries": 0,
+            "type": "battle",
+          },
+          "sJUKZWynf": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": false,
+                "ids": Array [],
+              },
+              "tier": 1,
+              "treasure": Object {
+                "hasTreasure": true,
+                "level": 1,
+              },
+            },
+            "expeditionId": "HPEBVeG9",
+            "id": "sJUKZWynf",
+            "nextBranchId": "wgH5bJGS-",
+            "status": "unlocked",
+            "tries": 0,
+            "type": "battle",
+          },
+          "wgH5bJGS-": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 2,
+              "treasure": Object {
+                "hasTreasure": true,
+                "level": 2,
+              },
+            },
+            "expeditionId": "HPEBVeG9",
+            "id": "wgH5bJGS-",
+            "nextBranchId": "0WfVFTsXB",
+            "status": "locked",
+            "tries": 0,
+            "type": "battle",
+          },
+        },
+        "firstBattleId": "sJUKZWynf",
       },
       "settingsSnapshot": Object {
         "availableCardIds": Array [
@@ -1791,49 +1837,6 @@ Object {
           "AdelheimsAmethystShard",
         ],
       },
-      "battles": Array [
-        Object {
-          "expeditionId": "V884fJ4MT",
-          "id": "4tihtCjRTv",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 2,
-          },
-          "status": "unlocked",
-          "treasure": Object {
-            "hasTreasure": true,
-            "level": 2,
-          },
-          "tries": 0,
-        },
-        Object {
-          "expeditionId": "V884fJ4MT",
-          "id": "8NbPmkdCrn",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 3,
-          },
-          "status": "locked",
-          "treasure": Object {
-            "hasTreasure": true,
-            "level": 3,
-          },
-          "tries": 0,
-        },
-        Object {
-          "expeditionId": "V884fJ4MT",
-          "id": "Ptqy1NGiT2",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 4,
-          },
-          "status": "locked",
-          "treasure": Object {
-            "hasTreasure": false,
-          },
-          "tries": 0,
-        },
-      ],
       "bigPocketVariant": false,
       "finished": false,
       "id": "V884fJ4MT",
@@ -2105,6 +2108,67 @@ Object {
           "i": 107,
           "j": 146,
         },
+      },
+      "sequence": Object {
+        "branches": Object {
+          "4tihtCjRTv": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 2,
+              "treasure": Object {
+                "hasTreasure": true,
+                "level": 2,
+              },
+            },
+            "expeditionId": "V884fJ4MT",
+            "id": "4tihtCjRTv",
+            "nextBranchId": "8NbPmkdCrn",
+            "status": "unlocked",
+            "tries": 0,
+            "type": "battle",
+          },
+          "8NbPmkdCrn": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 3,
+              "treasure": Object {
+                "hasTreasure": true,
+                "level": 3,
+              },
+            },
+            "expeditionId": "V884fJ4MT",
+            "id": "8NbPmkdCrn",
+            "nextBranchId": "Ptqy1NGiT2",
+            "status": "locked",
+            "tries": 0,
+            "type": "battle",
+          },
+          "Ptqy1NGiT2": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 4,
+              "treasure": Object {
+                "hasTreasure": false,
+              },
+            },
+            "expeditionId": "V884fJ4MT",
+            "id": "Ptqy1NGiT2",
+            "nextBranchId": undefined,
+            "status": "locked",
+            "tries": 0,
+            "type": "battle",
+          },
+        },
+        "firstBattleId": "4tihtCjRTv",
       },
       "settingsSnapshot": Object {
         "availableCardIds": Array [
@@ -2517,49 +2581,6 @@ Object {
           "AdelheimsAmethystShard",
         ],
       },
-      "battles": Array [
-        Object {
-          "expeditionId": "WITHOUT_SNAPSHOT",
-          "id": "4tihtCjRTv",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 2,
-          },
-          "status": "unlocked",
-          "treasure": Object {
-            "hasTreasure": true,
-            "level": 2,
-          },
-          "tries": 0,
-        },
-        Object {
-          "expeditionId": "WITHOUT_SNAPSHOT",
-          "id": "8NbPmkdCrn",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 3,
-          },
-          "status": "locked",
-          "treasure": Object {
-            "hasTreasure": true,
-            "level": 3,
-          },
-          "tries": 0,
-        },
-        Object {
-          "expeditionId": "WITHOUT_SNAPSHOT",
-          "id": "Ptqy1NGiT2",
-          "nemesisTier": Object {
-            "isNewTier": true,
-            "tier": 4,
-          },
-          "status": "locked",
-          "treasure": Object {
-            "hasTreasure": false,
-          },
-          "tries": 0,
-        },
-      ],
       "bigPocketVariant": false,
       "finished": false,
       "id": "WITHOUT_SNAPSHOT",
@@ -2831,6 +2852,67 @@ Object {
           "i": 107,
           "j": 146,
         },
+      },
+      "sequence": Object {
+        "branches": Object {
+          "4tihtCjRTv": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 2,
+              "treasure": Object {
+                "hasTreasure": true,
+                "level": 2,
+              },
+            },
+            "expeditionId": "WITHOUT_SNAPSHOT",
+            "id": "4tihtCjRTv",
+            "nextBranchId": "8NbPmkdCrn",
+            "status": "unlocked",
+            "tries": 0,
+            "type": "battle",
+          },
+          "8NbPmkdCrn": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 3,
+              "treasure": Object {
+                "hasTreasure": true,
+                "level": 3,
+              },
+            },
+            "expeditionId": "WITHOUT_SNAPSHOT",
+            "id": "8NbPmkdCrn",
+            "nextBranchId": "Ptqy1NGiT2",
+            "status": "locked",
+            "tries": 0,
+            "type": "battle",
+          },
+          "Ptqy1NGiT2": Object {
+            "battleConfig": Object {
+              "newUBNCards": Object {
+                "addRandom": true,
+                "ids": Array [],
+              },
+              "tier": 4,
+              "treasure": Object {
+                "hasTreasure": false,
+              },
+            },
+            "expeditionId": "WITHOUT_SNAPSHOT",
+            "id": "Ptqy1NGiT2",
+            "nextBranchId": undefined,
+            "status": "locked",
+            "tries": 0,
+            "type": "battle",
+          },
+        },
+        "firstBattleId": "4tihtCjRTv",
       },
       "settingsSnapshot": Object {
         "availableCardIds": Array [

@@ -5,13 +5,19 @@ import { RootState } from 'Redux/Store'
 import { State } from '../types'
 
 import { migrateToSettingsSnapshot } from './migrateToSettingsSnapshot'
+import { migrateToExpeditionDSL } from 'Redux/Store/Expeditions/Expeditions/migrations/migrateToExpeditionDSL'
+import { byAscendingVersion } from 'helpers'
 
 const migrations: types.Migration[] = [
+  {
+    version: 2020030401,
+    transformer: migrateToExpeditionDSL,
+  },
   {
     version: 2020030301,
     transformer: migrateToSettingsSnapshot,
   },
-]
+].sort(byAscendingVersion)
 
 export const migrate = (
   getState: () => RootState,

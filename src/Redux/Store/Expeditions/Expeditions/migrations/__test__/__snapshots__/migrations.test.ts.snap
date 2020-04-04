@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Expedition | migrations should migrate to settingsSnapshot 1`] = `
+exports[`Expedition | migrations should migrate to current expedition state 1`] = `
 Object {
   "expeditionIds": Array [
     "V884fJ4MT",
@@ -117,7 +117,7 @@ Object {
       "bigPocketVariant": false,
       "finished": false,
       "id": "Ce850x17_",
-      "migrationVersion": 2020030301,
+      "migrationVersion": 2020030401,
       "name": "test",
       "score": 4,
       "seed": Object {
@@ -1112,7 +1112,7 @@ Object {
       "bigPocketVariant": false,
       "finished": false,
       "id": "HPEBVeG9",
-      "migrationVersion": 2020030301,
+      "migrationVersion": 2020030401,
       "name": "Jakanytepopel",
       "score": 0,
       "seed": Object {
@@ -1837,7 +1837,7 @@ Object {
       "bigPocketVariant": false,
       "finished": false,
       "id": "V884fJ4MT",
-      "migrationVersion": 2020030301,
+      "migrationVersion": 2020030401,
       "name": "",
       "score": 0,
       "seed": Object {
@@ -2563,7 +2563,7 @@ Object {
       "bigPocketVariant": false,
       "finished": false,
       "id": "WITHOUT_SNAPSHOT",
-      "migrationVersion": 2020030301,
+      "migrationVersion": 2020030401,
       "name": "",
       "score": 0,
       "seed": Object {

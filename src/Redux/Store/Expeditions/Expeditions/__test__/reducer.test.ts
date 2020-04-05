@@ -595,22 +595,23 @@ describe('Reducer()', () => {
   it('should handle FINISH_EXPEDITION', () => {
     const battle = {
       id: 'YBsJLx4PfV',
-      rewards: {
-        treasure: ['AlchemistsAlembic'],
-        supplyIds: ['Popel'],
-      },
-      nemesisTier: {
-        tier: 2,
-        isNewTier: true,
-      },
-      treasure: {
-        level: 2,
-        hasTreasure: true,
-      },
+      nextBranchId: '0t22iBGUff',
+      type: 'battle',
       expeditionId: 'Expedition1',
-      status: 'finished',
+      battleConfig: {
+        tier: 2,
+        newUBNCards: {
+          ids: [],
+          addRandom: true,
+        },
+        treasure: {
+          level: 2,
+          hasTreasure: true,
+        },
+      },
+      status: 'unlocked',
       tries: 0,
-    } as types.OldStyleBattle
+    } as types.Branch
 
     const state = {
       expeditions: {

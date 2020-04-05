@@ -2,15 +2,10 @@ import { NemesisTier, TreasureLevel } from './data'
 import { IMarketSetup, IBluePrint } from 'types'
 import { Seed } from './index'
 
-export type VariantConfig = {
-  tier: NemesisTier
-  treasure: BattleTreasure
-}
-
 export type Variant = {
   id: string
   name: string
-  configList: Array<VariantConfig>
+  configList: Array<BattleConfig>
 }
 
 export type BattleTreasure = { level?: TreasureLevel; hasTreasure: boolean }
@@ -21,19 +16,23 @@ export const variants: { [id: string]: Variant } = {
     name: 'Default',
     configList: [
       {
-        tier: { tier: 1, isNewTier: false },
+        tier: 1,
+        newUBNCards: { ids: [], addRandom: false },
         treasure: { level: 1, hasTreasure: true },
       },
       {
-        tier: { tier: 2, isNewTier: true },
+        tier: 2,
+        newUBNCards: { ids: [], addRandom: true },
         treasure: { level: 2, hasTreasure: true },
       },
       {
-        tier: { tier: 3, isNewTier: true },
+        tier: 3,
+        newUBNCards: { ids: [], addRandom: true },
         treasure: { level: 3, hasTreasure: true },
       },
       {
-        tier: { tier: 4, isNewTier: true },
+        tier: 4,
+        newUBNCards: { ids: [], addRandom: true },
         treasure: { hasTreasure: false },
       },
     ],
@@ -43,15 +42,18 @@ export const variants: { [id: string]: Variant } = {
     name: 'Short',
     configList: [
       {
-        tier: { tier: 2, isNewTier: true },
+        tier: 2,
+        newUBNCards: { ids: [], addRandom: true },
         treasure: { level: 2, hasTreasure: true },
       },
       {
-        tier: { tier: 3, isNewTier: true },
+        tier: 3,
+        newUBNCards: { ids: [], addRandom: true },
         treasure: { level: 3, hasTreasure: true },
       },
       {
-        tier: { tier: 4, isNewTier: true },
+        tier: 4,
+        newUBNCards: { ids: [], addRandom: true },
         treasure: { hasTreasure: false },
       },
     ],
@@ -61,35 +63,43 @@ export const variants: { [id: string]: Variant } = {
     name: 'Extended',
     configList: [
       {
-        tier: { tier: 1, isNewTier: false },
+        tier: 1,
+        newUBNCards: { ids: [], addRandom: false },
         treasure: { hasTreasure: false },
       },
       {
-        tier: { tier: 1, isNewTier: false },
+        tier: 1,
+        newUBNCards: { ids: [], addRandom: false },
         treasure: { level: 1, hasTreasure: true },
       },
       {
-        tier: { tier: 2, isNewTier: true },
+        tier: 2,
+        newUBNCards: { ids: [], addRandom: true },
         treasure: { hasTreasure: false },
       },
       {
-        tier: { tier: 2, isNewTier: false },
+        tier: 2,
+        newUBNCards: { ids: [], addRandom: false },
         treasure: { level: 2, hasTreasure: true },
       },
       {
-        tier: { tier: 3, isNewTier: true },
+        tier: 3,
+        newUBNCards: { ids: [], addRandom: true },
         treasure: { hasTreasure: false },
       },
       {
-        tier: { tier: 3, isNewTier: false },
+        tier: 3,
+        newUBNCards: { ids: [], addRandom: false },
         treasure: { level: 3, hasTreasure: true },
       },
       {
-        tier: { tier: 4, isNewTier: true },
+        tier: 4,
+        newUBNCards: { ids: [], addRandom: true },
         treasure: { hasTreasure: false },
       },
       {
-        tier: { tier: 4, isNewTier: false },
+        tier: 4,
+        newUBNCards: { ids: [], addRandom: false },
         treasure: { hasTreasure: false },
       },
     ],
@@ -110,6 +120,9 @@ export type BattleStatus =
   | 'lost'
   | 'finished'
 
+/*
+ * @deprecated
+ */
 export type OldStyleBattle = {
   id: string
   expeditionId: string
@@ -137,6 +150,9 @@ export type ExpeditionSeed = Seed & {
   nemesisState: ExpeditionSeedState
 }
 
+/*
+ * @deprecated
+ */
 export type OldStyleExpedition = {
   id: string
   name: string
@@ -215,7 +231,7 @@ export type Branch = BranchConfig & (Battle | Narrative | RewardBranch)
 export type Expedition = {
   id: string
   name: string
-  migrationVersion: number
+  migrationVersion?: number
   score: number
   seed: ExpeditionSeed
   settingsSnapshot: SettingsSnapshot

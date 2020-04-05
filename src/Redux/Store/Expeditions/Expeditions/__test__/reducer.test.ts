@@ -172,7 +172,7 @@ describe('Reducer()', () => {
     const cmd = getCmd(result)
 
     const battleIndex = expedition1.battles.findIndex(
-      oldBattle => oldBattle.id === battle.id
+      (oldBattle) => oldBattle.id === battle.id
     )
     const updatedBattles = Object.assign([...expedition1.battles], {
       [battleIndex]: battle,
@@ -598,7 +598,7 @@ describe('Reducer()', () => {
       nextBranchId: '0t22iBGUff',
       type: 'battle',
       expeditionId: 'Expedition1',
-      battleConfig: {
+      config: {
         tier: 2,
         newUBNCards: {
           ids: [],

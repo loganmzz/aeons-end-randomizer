@@ -204,7 +204,7 @@ export type Battle = {
   type: 'battle'
   expeditionId: string
   nemesisId?: string
-  battleConfig: BattleConfig
+  config: BattleConfig
   status: BattleStatus
   rewards?: { treasure: string[]; mage?: string; supplyIds: string[] }
   tries: number

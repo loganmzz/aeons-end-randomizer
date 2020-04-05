@@ -13,19 +13,17 @@ export const acceptLoss = (
   const { battle, banished, newSupplyIds } = action.payload
 
   const oldExpedition = state.expeditions[battle.expeditionId]
-  const oldBattleList = oldExpedition.battles
+  const branches = oldExpedition.sequence.branches
+  const oldBattle = oldExpedition.sequence.branches[battle.id]
 
-  const battleIndex = oldBattleList.findIndex(
-    oldBattle => oldBattle.id === battle.id
-  )
-
-  const updatedBattles = Object.assign([...oldBattleList], {
-    [battleIndex]: {
-      ...battle,
+  const updatedBranches = {
+    ...branches,
+    [oldBattle.id]: {
+      ...oldBattle,
       status: 'before_battle',
       rewards: undefined,
     },
-  })
+  }
 
   const newTreasureIds = battle.rewards ? battle.rewards.treasure : []
   const newMageIds =
@@ -37,7 +35,10 @@ export const acceptLoss = (
       ...state.expeditions,
       [battle.expeditionId]: {
         ...oldExpedition,
-        battles: updatedBattles,
+        sequence: {
+          ...oldExpedition.sequence,
+          branches: updatedBranches,
+        },
         barracks: {
           ...oldExpedition.barracks,
           treasureIds: [

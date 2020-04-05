@@ -27,7 +27,7 @@ export const actions = {
   loseBattle: (battle: types.OldStyleBattle) =>
     createAction(ActionTypes.LOSE_BATTLE, { battle }),
   acceptLoss: (
-    battle: types.OldStyleBattle,
+    battle: types.Battle,
     banished: string[],
     newSupplyIds: string[]
   ) =>

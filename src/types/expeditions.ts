@@ -108,7 +108,7 @@ export const variants: { [id: string]: Variant } = {
 
 // Automagically generate union type of variant ids from variants
 // object
-export const variantIds = Object.values(variants).map(val => val.id)
+export const variantIds = Object.values(variants).map((val) => val.id)
 export type VariantId = typeof variantIds[number]
 
 export type BattleStatus =
@@ -208,26 +208,26 @@ export type Battle = {
   status: BattleStatus
   rewards?: { treasure: string[]; mage?: string; supplyIds: string[] }
   tries: number
-}
+} & BranchConfig
 
 export type Narrative = {
   id: string
   type: 'narrative'
   text: string
   descisions: string[]
-}
+} & BranchConfig
 
 export type RewardBranch = {
   id: string
   type: 'reward'
   rewards: Rewards
-}
+} & BranchConfig
 
 export type BranchConfig = {
   nextBranchId?: string | { [key: number]: string }
 }
 
-export type Branch = BranchConfig & (Battle | Narrative | RewardBranch)
+export type Branch = Battle | Narrative | RewardBranch
 
 export type Expedition = {
   id: string

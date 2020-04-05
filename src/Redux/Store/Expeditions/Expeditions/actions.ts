@@ -37,7 +37,7 @@ export const actions = {
   rollLossSuccess: (result: types.OldStyleBattle & { seed: types.Seed }) =>
     createAction(ActionTypes.ROLL_LOSS_SUCCESS, result),
   finishBattle: (
-    battle: types.OldStyleBattle,
+    battle: types.Battle,
     newSupplyIds: string[],
     banished: string[]
   ) =>

@@ -12,27 +12,26 @@ export const finishBattle = (
 ) => {
   const { battle, newSupplyIds, banished } = action.payload
   const oldExpedition = state.expeditions[battle.expeditionId]
-  const oldBattleList = oldExpedition.battles
+  const branches = oldExpedition.sequence.branches
 
-  const battleIndex = oldBattleList.findIndex(
-    oldBattle => oldBattle.id === battle.id
-  )
+  const { nextBranchId } = battle
 
-  const indexOfNextBattle = battleIndex + 1
-  const hasNext = indexOfNextBattle < oldBattleList.length
+  // Battles do currently only have one outcome
+  const hasNext = !!nextBranchId && typeof nextBranchId === 'string'
 
-  const updatedBattles = Object.assign([...oldBattleList], {
-    [battleIndex]: {
+  const updatedBranches = {
+    ...branches,
+    [battle.id]: {
       ...battle,
       status: 'finished',
     },
     ...(hasNext && {
-      [indexOfNextBattle]: {
-        ...oldBattleList[indexOfNextBattle],
+      [nextBranchId as string]: {
+        ...branches[nextBranchId as string],
         status: 'unlocked',
       },
     }),
-  })
+  }
 
   const newTreasureIds = battle.rewards ? battle.rewards.treasure : []
 
@@ -42,7 +41,10 @@ export const finishBattle = (
       ...state.expeditions,
       [battle.expeditionId]: {
         ...oldExpedition,
-        battles: updatedBattles,
+        sequence: {
+          ...oldExpedition.sequence,
+          branches: updatedBranches,
+        },
         barracks: {
           ...oldExpedition.barracks,
           treasureIds: [

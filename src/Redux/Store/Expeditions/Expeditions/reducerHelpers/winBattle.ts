@@ -29,18 +29,15 @@ export const winBattleSuccess = (
 ) => {
   const { battle, seed } = action.payload
   const oldExpedition = state.expeditions[battle.expeditionId]
-  const oldBattleList = oldExpedition.battles
+  const { branches } = oldExpedition.sequence
 
-  const battleIndex = oldBattleList.findIndex(
-    oldBattle => oldBattle.id === battle.id
-  )
-
-  const updatedBattles = Object.assign([...oldBattleList], {
-    [battleIndex]: {
+  const updatedBranches = {
+    ...branches,
+    [battle.id]: {
       ...battle,
       status: 'won',
     },
-  })
+  }
 
   const battleScore = helpers.calcBattleScore(battle.tries)
 
@@ -55,7 +52,10 @@ export const winBattleSuccess = (
           supplyState: seed.state || true,
         },
         score: oldExpedition.score + battleScore,
-        battles: updatedBattles,
+        sequence: {
+          ...oldExpedition.sequence,
+          branches: updatedBranches,
+        },
       },
     },
   }

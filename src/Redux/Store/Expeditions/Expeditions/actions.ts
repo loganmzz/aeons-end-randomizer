@@ -9,22 +9,22 @@ export const actions = {
     createAction(ActionTypes.CREATE_EXPEDITION, { baseConfig }),
   createExpeditionSuccess: (newExpedition: types.Expedition) =>
     createAction(ActionTypes.CREATE_EXPEDITION_SUCCESS, newExpedition),
-  rollBattle: (battle: types.OldStyleBattle) =>
+  rollBattle: (battle: types.Battle) =>
     createAction(ActionTypes.ROLL_BATTLE, { battle }),
   rollBattleSuccess: (result: {
-    battle: types.OldStyleBattle
+    battle: types.Battle
     upgradedBasicNemesisCardIds: string[]
     nemesisSeedState: types.ExpeditionSeedState
   }) => createAction(ActionTypes.ROLL_BATTLE_SUCCESS, result),
-  startBattle: (battle: types.OldStyleBattle) =>
+  startBattle: (battle: types.Battle) =>
     createAction(ActionTypes.START_BATTLE, { battle }),
-  winBattle: (battle: types.OldStyleBattle) =>
+  winBattle: (battle: types.Battle) =>
     createAction(ActionTypes.WIN_BATTLE, battle),
   winBattleSuccess: (result: {
     battle: types.OldStyleBattle
     seed: types.Seed
   }) => createAction(ActionTypes.WIN_BATTLE_SUCCESS, result),
-  loseBattle: (battle: types.OldStyleBattle) =>
+  loseBattle: (battle: types.Battle) =>
     createAction(ActionTypes.LOSE_BATTLE, { battle }),
   acceptLoss: (
     battle: types.Battle,
@@ -32,9 +32,9 @@ export const actions = {
     newSupplyIds: string[]
   ) =>
     createAction(ActionTypes.ACCEPT_LOSS, { battle, banished, newSupplyIds }),
-  rollLoss: (battle: types.OldStyleBattle, rewardType: RewardType) =>
+  rollLoss: (battle: types.Battle, rewardType: RewardType) =>
     createAction(ActionTypes.ROLL_LOSS, { battle, rewardType }),
-  rollLossSuccess: (result: types.OldStyleBattle & { seed: types.Seed }) =>
+  rollLossSuccess: (result: types.Battle & { seed: types.Seed }) =>
     createAction(ActionTypes.ROLL_LOSS_SUCCESS, result),
   finishBattle: (
     battle: types.Battle,
@@ -42,7 +42,7 @@ export const actions = {
     banished: string[]
   ) =>
     createAction(ActionTypes.FINISH_BATTLE, { battle, newSupplyIds, banished }),
-  finishExpedition: (battle: types.OldStyleBattle) =>
+  finishExpedition: (battle: types.Battle) =>
     createAction(ActionTypes.FINISH_EXPEDITION, { battle }),
   deleteExpedition: (id: string) =>
     createAction(ActionTypes.DELETE_EXPEDITION, id),

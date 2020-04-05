@@ -236,5 +236,5 @@ export type Expedition = {
 }
 
 export type Expeditions = {
-  [id: string]: OldStyleExpedition
+  [id: string]: Expedition
 }

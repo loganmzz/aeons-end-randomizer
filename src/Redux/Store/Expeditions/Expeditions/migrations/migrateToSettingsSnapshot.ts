@@ -9,7 +9,7 @@ import { createSettingsSnapshot } from '../sideEffects/createSettingsSnapshot'
 // the useres current settings during an expedition.
 export const migrateToSettingsSnapshot = (
   rootState: RootState,
-  expedition: types.OldStyleExpedition
+  expedition: types.Expedition
 ) => {
   const settingsSnapshot = createSettingsSnapshot(rootState)
 

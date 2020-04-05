@@ -47,7 +47,7 @@ describe('Reducer()', () => {
   it('should handle CREATE_EXPEDITION_SUCCESS', () => {
     const result = Reducer(
       initialState,
-      actions.createExpeditionSuccess(expedition1 as types.OldStyleExpedition)
+      actions.createExpeditionSuccess(expedition1 as types.Expedition)
     )
 
     const model = getModel(result)
@@ -73,7 +73,7 @@ describe('Reducer()', () => {
     const result = Reducer(
       {
         expeditions: {
-          Expedition1: expedition1 as types.OldStyleExpedition,
+          Expedition1: expedition1 as types.Expedition,
         },
         expeditionIds: ['Expedition1'],
       },
@@ -115,7 +115,7 @@ describe('Reducer()', () => {
 
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -154,7 +154,7 @@ describe('Reducer()', () => {
 
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -221,7 +221,7 @@ describe('Reducer()', () => {
 
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -260,7 +260,7 @@ describe('Reducer()', () => {
 
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -283,7 +283,7 @@ describe('Reducer()', () => {
   it('should handle WIN_BATTLE_SUCCESS', () => {
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -349,7 +349,7 @@ describe('Reducer()', () => {
 
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -388,7 +388,7 @@ describe('Reducer()', () => {
 
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -411,7 +411,7 @@ describe('Reducer()', () => {
   it('should handle ROLL_LOSS_SUCCESS', () => {
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -480,7 +480,7 @@ describe('Reducer()', () => {
 
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -522,7 +522,7 @@ describe('Reducer()', () => {
 
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -568,7 +568,7 @@ describe('Reducer()', () => {
 
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -614,7 +614,7 @@ describe('Reducer()', () => {
 
     const state = {
       expeditions: {
-        Expedition1: expedition1 as types.OldStyleExpedition,
+        Expedition1: expedition1 as types.Expedition,
       },
       expeditionIds: ['Expedition1'],
     }
@@ -667,7 +667,7 @@ describe('Reducer()', () => {
     const state = {
       expeditions: {
         // @ts-ignore disable-line
-        Expedition2: expedition2 as types.OldStyleExpedition,
+        Expedition2: expedition2 as types.Expedition,
       },
       expeditionIds: ['Expedition2'],
     }
@@ -692,7 +692,7 @@ describe('Reducer()', () => {
     const state = {
       expeditions: {
         // @ts-ignore disable-line
-        Expedition1: expedition2 as types.OldStyleExpedition,
+        Expedition1: expedition2 as types.Expedition,
       },
       expeditionIds: ['Expedition2'],
     }
@@ -727,7 +727,7 @@ describe('Reducer()', () => {
   it('should handle EXPEDITION_SHARE', () => {
     const result = Reducer(
       initialState,
-      actions.shareExpedition(expedition1 as types.OldStyleExpedition)
+      actions.shareExpedition(expedition1 as types.Expedition)
     )
 
     const model = getModel(result)

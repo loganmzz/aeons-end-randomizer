@@ -7,7 +7,7 @@ import { ActionTypes, State, BaseConfig, RewardType } from './types'
 export const actions = {
   createExpedition: (baseConfig: BaseConfig) =>
     createAction(ActionTypes.CREATE_EXPEDITION, { baseConfig }),
-  createExpeditionSuccess: (newExpedition: types.OldStyleExpedition) =>
+  createExpeditionSuccess: (newExpedition: types.Expedition) =>
     createAction(ActionTypes.CREATE_EXPEDITION_SUCCESS, newExpedition),
   rollBattle: (battle: types.OldStyleBattle) =>
     createAction(ActionTypes.ROLL_BATTLE, { battle }),
@@ -57,7 +57,7 @@ export const actions = {
     createAction(ActionTypes.FETCH_FROM_DB_FAILURE, error),
   migrateToSettingsSnapshotSuccessful: (state: State) =>
     createAction(ActionTypes.SETTINGS_SNAPSHOT_MIGRATION_SUCCESS, state),
-  shareExpedition: (expedition: types.OldStyleExpedition) =>
+  shareExpedition: (expedition: types.Expedition) =>
     createAction(ActionTypes.EXPEDITION_SHARE, { expedition }),
   shareExpeditionSuccess: () =>
     createAction(ActionTypes.EXPEDITION_SHARE_SUCCESS),

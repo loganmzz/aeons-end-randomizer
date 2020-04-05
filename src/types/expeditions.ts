@@ -1,4 +1,4 @@
-import { NemesisTier, TreasureLevel } from './data'
+import { OldStyleNemesisTier, TreasureLevel } from './data'
 import { IMarketSetup, IBluePrint } from 'types'
 import { Seed } from './index'
 
@@ -127,7 +127,7 @@ export type OldStyleBattle = {
   id: string
   expeditionId: string
   nemesisId?: string
-  nemesisTier: NemesisTier
+  nemesisTier: OldStyleNemesisTier
   treasure: BattleTreasure
   status: BattleStatus
   rewards?: { treasure: string[]; mage?: string; supplyIds: string[] }
@@ -188,8 +188,10 @@ export type Rewards = {
   }
 }
 
+export type NemesisTier = 1 | 2 | 3 | 4
+
 export type BattleConfig = {
-  tier: 1 | 2 | 3 | 4
+  tier: NemesisTier
   nemesisId?: string
   newUBNCards: { ids: []; addRandom: boolean }
   specialRules?: string

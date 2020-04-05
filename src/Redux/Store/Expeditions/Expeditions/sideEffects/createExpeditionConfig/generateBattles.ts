@@ -6,13 +6,13 @@ export const generateBattles = (
   expeditionId: string
 ) => {
   const battles = variant.configList.map(
-    (config, index): types.OldStyleBattle => {
+    (config, index): types.Battle => {
       const isFirst = index === 0
 
       return {
         id: shortid.generate(),
-        nemesisTier: config.tier,
-        treasure: config.treasure,
+        type: 'battle',
+        config,
         expeditionId,
         status: isFirst ? 'unlocked' : 'locked',
         tries: 0,

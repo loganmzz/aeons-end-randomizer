@@ -126,7 +126,15 @@ export const createExpeditionConfig = (
     banished: [],
     variantId,
     bigPocketVariant: bigPocketVariant,
-    battles,
+    sequence: {
+      firstBattleId: battles[0].id,
+      branches: battles.reduce((acc, battle) => {
+        return {
+          ...acc,
+          [battle.id]: battle,
+        }
+      }, {}),
+    },
     finished: false,
   }
 }

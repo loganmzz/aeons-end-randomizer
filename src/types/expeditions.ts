@@ -219,6 +219,7 @@ export type Narrative = {
 
 export type RewardBranch = {
   id: string
+  type: 'reward'
   rewards: Rewards
 }
 
